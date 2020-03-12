@@ -1,4 +1,17 @@
-;; -*- lexical-binding:t -*-
+;;; ffi.el --- -*- lexical-binding: t -*-
+
+;; Copyright (C) 2015-2017 Tom Tromey
+
+;; Author: Tom Tromey <tom@tromey.com>
+;; Package-Requires: ((emacs "25.1"))
+
+;;; Commentary:
+
+;; This is an FFI for Emacs.  It is based on libffi and relies on the
+;; dynamic module support in order to be loaded into Emacs.  It is
+;; relatively full-featured, but for the time being low-level.
+
+;;; Code:
 
 (require 'cl-macs)
 
@@ -139,3 +152,4 @@ SLOT-NAME is a symbol and TYPE is an FFI type descriptor."
       `(with-ffi-string ,first-binding ,@body))))
 
 (provide 'ffi)
+;;; ffi.el ends here
