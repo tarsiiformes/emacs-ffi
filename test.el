@@ -1,4 +1,3 @@
-
 (require 'ffi)
 
 (define-ffi-library test.so "test")
@@ -40,7 +39,7 @@
 		(ffi--type-size :int)))
     (should (eq (ffi--type-alignment struct-type)
 		(ffi--type-alignment :int)))))
-    
+
 (ert-deftest ffi-struct-layout-offsets ()
   (let* ((types '(:pointer :int))
 	 (struct-type (apply #'ffi--define-struct types)))
@@ -109,4 +108,3 @@
   (should (eq (with-ffi-temporaries ((a :int) (b :int)) 1 2 3) 3))
   (should (eq (with-ffi-string (a "test") 1 2 3) 3))
   (should (eq (with-ffi-strings ((a "s1") (b "s2")) 1 2 3) 3)))
-
